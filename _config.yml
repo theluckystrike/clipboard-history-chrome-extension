@@ -1,0 +1,8 @@
+title: "Clipboard History Pro — Free Open Source Chrome Extension"
+description: "Never lose copied text again. Clipboard History saves everything you copy with instant search and keyboard shortcuts."
+theme: jekyll-theme-cayman
+url: "https://theluckystrike.github.io"
+baseurl: "/clipboard-history-chrome-extension"
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap

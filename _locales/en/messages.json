@@ -1,0 +1,222 @@
+{
+    "extensionName": {
+        "message": "Clipboard History",
+        "description": "The name of the extension shown in Chrome"
+    },
+    "extensionDescription": {
+        "message": "Never lose copied text again. Search, pin, and paste from your complete clipboard history.",
+        "description": "Extension description for Chrome Web Store"
+    },
+    "browserActionTitle": {
+        "message": "Clipboard History",
+        "description": "Tooltip shown when hovering over extension icon"
+    },
+    "tabAll": {
+        "message": "All",
+        "description": "Tab label for all clips"
+    },
+    "tabPinned": {
+        "message": "Pinned",
+        "description": "Tab label for pinned clips"
+    },
+    "tabStarred": {
+        "message": "Starred",
+        "description": "Tab label for starred clips"
+    },
+    "searchPlaceholder": {
+        "message": "Search clips...",
+        "description": "Placeholder text in search input"
+    },
+    "searchNoResults": {
+        "message": "No clips found",
+        "description": "Message when search returns no results"
+    },
+    "emptyStateTitle": {
+        "message": "No clips yet",
+        "description": "Title when clipboard history is empty"
+    },
+    "emptyStateDescription": {
+        "message": "Copy some text and it will appear here",
+        "description": "Description when clipboard history is empty"
+    },
+    "clipCopied": {
+        "message": "Copied to clipboard",
+        "description": "Toast message when clip is copied"
+    },
+    "clipPinned": {
+        "message": "Clip pinned",
+        "description": "Toast message when clip is pinned"
+    },
+    "clipUnpinned": {
+        "message": "Clip unpinned",
+        "description": "Toast message when clip is unpinned"
+    },
+    "clipStarred": {
+        "message": "Clip starred",
+        "description": "Toast message when clip is starred"
+    },
+    "clipUnstarred": {
+        "message": "Clip unstarred",
+        "description": "Toast message when clip is unstarred"
+    },
+    "clipDeleted": {
+        "message": "Clip deleted",
+        "description": "Toast message when clip is deleted"
+    },
+    "buttonCopy": {
+        "message": "Copy",
+        "description": "Copy button text"
+    },
+    "buttonPin": {
+        "message": "Pin",
+        "description": "Pin button text"
+    },
+    "buttonUnpin": {
+        "message": "Unpin",
+        "description": "Unpin button text"
+    },
+    "buttonStar": {
+        "message": "Star",
+        "description": "Star button text"
+    },
+    "buttonUnstar": {
+        "message": "Unstar",
+        "description": "Unstar button text"
+    },
+    "buttonDelete": {
+        "message": "Delete",
+        "description": "Delete button text"
+    },
+    "buttonClearAll": {
+        "message": "Clear All",
+        "description": "Clear all clips button"
+    },
+    "buttonSettings": {
+        "message": "Settings",
+        "description": "Settings button text"
+    },
+    "settingsTitle": {
+        "message": "Settings",
+        "description": "Settings page title"
+    },
+    "settingsTheme": {
+        "message": "Theme",
+        "description": "Theme setting label"
+    },
+    "settingsThemeLight": {
+        "message": "Light",
+        "description": "Light theme option"
+    },
+    "settingsThemeDark": {
+        "message": "Dark",
+        "description": "Dark theme option"
+    },
+    "settingsThemeSystem": {
+        "message": "System",
+        "description": "System theme option"
+    },
+    "settingsMaxClips": {
+        "message": "Maximum clips",
+        "description": "Max clips setting label"
+    },
+    "settingsNotifications": {
+        "message": "Notifications",
+        "description": "Notifications setting label"
+    },
+    "clipCount": {
+        "message": "$COUNT$ clips",
+        "description": "Number of clips",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+    "clipTypeText": {
+        "message": "Text",
+        "description": "Text clip type label"
+    },
+    "clipTypeUrl": {
+        "message": "URL",
+        "description": "URL clip type label"
+    },
+    "clipTypeCode": {
+        "message": "Code",
+        "description": "Code clip type label"
+    },
+    "clipTypeEmail": {
+        "message": "Email",
+        "description": "Email clip type label"
+    },
+    "timeJustNow": {
+        "message": "Just now",
+        "description": "Timestamp for very recent clips"
+    },
+    "timeMinutesAgo": {
+        "message": "$COUNT$ minutes ago",
+        "description": "Timestamp for minutes ago",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "5"
+            }
+        }
+    },
+    "timeHoursAgo": {
+        "message": "$COUNT$ hours ago",
+        "description": "Timestamp for hours ago",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
+    },
+    "timeDaysAgo": {
+        "message": "$COUNT$ days ago",
+        "description": "Timestamp for days ago",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "3"
+            }
+        }
+    },
+    "confirmClearAll": {
+        "message": "Are you sure you want to clear all clips? This cannot be undone.",
+        "description": "Confirmation message for clearing all clips"
+    },
+    "confirmDelete": {
+        "message": "Are you sure you want to delete this clip?",
+        "description": "Confirmation message for deleting a clip"
+    },
+    "buttonConfirm": {
+        "message": "Confirm",
+        "description": "Confirm button text"
+    },
+    "buttonCancel": {
+        "message": "Cancel",
+        "description": "Cancel button text"
+    },
+    "errorGeneric": {
+        "message": "Something went wrong. Please try again.",
+        "description": "Generic error message"
+    },
+    "errorStorageFull": {
+        "message": "Storage is full. Please delete some clips.",
+        "description": "Storage full error message"
+    },
+    "welcomeTitle": {
+        "message": "Welcome to Clipboard History!",
+        "description": "Welcome screen title"
+    },
+    "welcomeDescription": {
+        "message": "Your clipboard history is now being saved automatically.",
+        "description": "Welcome screen description"
+    },
+    "welcomeGetStarted": {
+        "message": "Get Started",
+        "description": "Get started button on welcome screen"
+    }
+}

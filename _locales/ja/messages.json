@@ -1,0 +1,196 @@
+{
+    "extensionName": {
+        "message": "Clipboard History",
+        "description": "The name of the extension shown in Chrome"
+    },
+    "extensionDescription": {
+        "message": "コピーしたテキストを二度と失わない。クリップボード履歴の検索、ピン留め、ペーストが可能。",
+        "description": "Extension description for Chrome Web Store"
+    },
+    "browserActionTitle": {
+        "message": "Clipboard History",
+        "description": "Tooltip shown when hovering over extension icon"
+    },
+    "tabAll": {
+        "message": "すべて",
+        "description": "Tab label for all clips"
+    },
+    "tabPinned": {
+        "message": "ピン留め",
+        "description": "Tab label for pinned clips"
+    },
+    "tabStarred": {
+        "message": "お気に入り",
+        "description": "Tab label for starred clips"
+    },
+    "searchPlaceholder": {
+        "message": "クリップを検索...",
+        "description": "Placeholder text in search input"
+    },
+    "searchNoResults": {
+        "message": "クリップが見つかりません",
+        "description": "Message when search returns no results"
+    },
+    "emptyStateTitle": {
+        "message": "クリップがありません",
+        "description": "Title when clipboard history is empty"
+    },
+    "emptyStateDescription": {
+        "message": "テキストをコピーするとここに表示されます",
+        "description": "Description when clipboard history is empty"
+    },
+    "clipCopied": {
+        "message": "クリップボードにコピーしました",
+        "description": "Toast message when clip is copied"
+    },
+    "clipPinned": {
+        "message": "クリップをピン留めしました",
+        "description": "Toast message when clip is pinned"
+    },
+    "clipUnpinned": {
+        "message": "ピン留めを解除しました",
+        "description": "Toast message when clip is unpinned"
+    },
+    "clipStarred": {
+        "message": "お気に入りに追加しました",
+        "description": "Toast message when clip is starred"
+    },
+    "clipUnstarred": {
+        "message": "お気に入りから削除しました",
+        "description": "Toast message when clip is unstarred"
+    },
+    "clipDeleted": {
+        "message": "クリップを削除しました",
+        "description": "Toast message when clip is deleted"
+    },
+    "buttonCopy": {
+        "message": "コピー",
+        "description": "Copy button text"
+    },
+    "buttonPin": {
+        "message": "ピン留め",
+        "description": "Pin button text"
+    },
+    "buttonUnpin": {
+        "message": "ピン解除",
+        "description": "Unpin button text"
+    },
+    "buttonStar": {
+        "message": "お気に入り",
+        "description": "Star button text"
+    },
+    "buttonUnstar": {
+        "message": "お気に入り解除",
+        "description": "Unstar button text"
+    },
+    "buttonDelete": {
+        "message": "削除",
+        "description": "Delete button text"
+    },
+    "buttonClearAll": {
+        "message": "すべてクリア",
+        "description": "Clear all clips button"
+    },
+    "buttonSettings": {
+        "message": "設定",
+        "description": "Settings button text"
+    },
+    "settingsTitle": {
+        "message": "設定",
+        "description": "Settings page title"
+    },
+    "settingsTheme": {
+        "message": "テーマ",
+        "description": "Theme setting label"
+    },
+    "settingsThemeLight": {
+        "message": "ライト",
+        "description": "Light theme option"
+    },
+    "settingsThemeDark": {
+        "message": "ダーク",
+        "description": "Dark theme option"
+    },
+    "settingsThemeSystem": {
+        "message": "システム",
+        "description": "System theme option"
+    },
+    "clipTypeText": {
+        "message": "テキスト",
+        "description": "Text clip type label"
+    },
+    "clipTypeUrl": {
+        "message": "URL",
+        "description": "URL clip type label"
+    },
+    "clipTypeCode": {
+        "message": "コード",
+        "description": "Code clip type label"
+    },
+    "clipTypeEmail": {
+        "message": "メール",
+        "description": "Email clip type label"
+    },
+    "timeJustNow": {
+        "message": "たった今",
+        "description": "Timestamp for very recent clips"
+    },
+    "timeMinutesAgo": {
+        "message": "$COUNT$分前",
+        "description": "Timestamp for minutes ago",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "5"
+            }
+        }
+    },
+    "timeHoursAgo": {
+        "message": "$COUNT$時間前",
+        "description": "Timestamp for hours ago",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
+    },
+    "timeDaysAgo": {
+        "message": "$COUNT$日前",
+        "description": "Timestamp for days ago",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "3"
+            }
+        }
+    },
+    "confirmClearAll": {
+        "message": "すべてのクリップをクリアしてもよろしいですか？この操作は元に戻せません。",
+        "description": "Confirmation message for clearing all clips"
+    },
+    "buttonConfirm": {
+        "message": "確認",
+        "description": "Confirm button text"
+    },
+    "buttonCancel": {
+        "message": "キャンセル",
+        "description": "Cancel button text"
+    },
+    "errorGeneric": {
+        "message": "エラーが発生しました。もう一度お試しください。",
+        "description": "Generic error message"
+    },
+    "welcomeTitle": {
+        "message": "Clipboard Historyへようこそ！",
+        "description": "Welcome screen title"
+    },
+    "welcomeDescription": {
+        "message": "クリップボード履歴が自動的に保存されるようになりました。",
+        "description": "Welcome screen description"
+    },
+    "welcomeGetStarted": {
+        "message": "始める",
+        "description": "Get started button on welcome screen"
+    }
+}

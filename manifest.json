@@ -1,0 +1,59 @@
+{
+    "manifest_version": 3,
+    "name": "Clipboard History",
+    "version": "1.0.0",
+    "description": "Never lose copied text again. Search your clipboard history instantly, pin favorites, and paste with one click.",
+    "default_locale": "en",
+    "author": "Zovo",
+    "homepage_url": "https://zovo.one",
+    "icons": {
+        "16": "icons/icon-16.png",
+        "32": "icons/icon-32.png",
+        "48": "icons/icon-48.png",
+        "128": "icons/icon-128.png"
+    },
+    "action": {
+        "default_popup": "src/popup.html",
+        "default_icon": {
+            "16": "icons/icon-16.png",
+            "32": "icons/icon-32.png"
+        },
+        "default_title": "Clipboard History"
+    },
+    "background": {
+        "service_worker": "src/background.js"
+    },
+    "permissions": [
+        "storage",
+        "clipboardRead",
+        "clipboardWrite",
+        "contextMenus",
+        "notifications"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "src/content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'none'"
+    },
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+V",
+                "mac": "Command+Shift+V"
+            },
+            "description": "Open Clipboard History"
+        }
+    }
+}

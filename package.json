@@ -1,0 +1,24 @@
+{
+  "name": "clipboard-history-chrome-extension",
+  "version": "1.0.0",
+  "description": "Open source Chrome clipboard history manager. Never lose copied text again. Search, pin, and organize your clipboard history.",
+  "keywords": [
+    "chrome-extension",
+    "clipboard-manager",
+    "clipboard-history",
+    "productivity",
+    "manifest-v3",
+    "browser-extension",
+    "copy-paste"
+  ],
+  "author": "Zovo <hello@zovo.one> (https://zovo.one)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theluckystrike/clipboard-history-chrome-extension"
+  },
+  "homepage": "https://chromewebstore.google.com/detail/clipboard-history-pro/ddmidpneacclepjmdjibmcdijedgdidf",
+  "bugs": {
+    "url": "https://github.com/theluckystrike/clipboard-history-chrome-extension/issues"
+  }
+}

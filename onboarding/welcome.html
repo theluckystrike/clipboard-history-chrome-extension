@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Clipboard History</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --zovo-violet: #7C3AED;
+            --zovo-violet-dark: #6D28D9;
+            --zovo-violet-glow: rgba(124, 58, 237, 0.3);
+            --zovo-success: #10B981;
+            --zovo-bg: #0A0A0B;
+            --zovo-surface: #18181B;
+            --zovo-text: #FAFAF9;
+            --zovo-muted: #71717A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--zovo-bg);
+            color: var(--zovo-text);
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 20%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+                var(--zovo-bg);
+            z-index: -1;
+        }
+
+        .slides-container {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100vh;
+        }
+
+        .slide {
+            min-width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .zovo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--zovo-violet);
+            margin-bottom: 32px;
+        }
+
+        .zovo-badge .z {
+            width: 18px;
+            height: 18px;
+            background: linear-gradient(135deg, var(--zovo-violet), var(--zovo-violet-dark));
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 11px;
+            color: white;
+        }
+
+        .slide-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(124, 58, 237, 0.05));
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            border-radius: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            margin-bottom: 32px;
+            box-shadow: 0 0 60px var(--zovo-violet-glow);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #fff, #a1a1aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--zovo-muted);
+            max-width: 400px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            max-width: 500px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .feature-card .icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .feature-card h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .feature-card p {
+            font-size: 12px;
+            color: var(--zovo-muted);
+            line-height: 1.4;
+        }
+
+        .keyboard-hint {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+
+        .key {
+            background: var(--zovo-surface);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            padding: 8px 14px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .key-label {
+            color: var(--zovo-muted);
+            font-size: 13px;
+        }
+
+        .nav-dots {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            width: 24px;
+            border-radius: 4px;
+            background: var(--zovo-violet);
+        }
+
+        .btn-container {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--zovo-violet), var(--zovo-violet-dark));
+            color: white;
+            box-shadow: 0 4px 20px var(--zovo-violet-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px var(--zovo-violet-glow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--zovo-muted);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, var(--zovo-success), #059669);
+            color: white;
+        }
+
+        .privacy-note {
+            position: fixed;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 16px;
+            font-size: 11px;
+            color: var(--zovo-muted);
+        }
+
+        .privacy-note span::before {
+            content: "\2713 ";
+            color: var(--zovo-success);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-gradient"></div>
+
+    <div class="slides-container" id="slidesContainer">
+        <!-- Slide 1: Welcome -->
+        <div class="slide slide-1">
+            <div class="zovo-badge">
+                <span class="z">Z</span>
+                <span>Powered by Zovo</span>
+            </div>
+            <div class="slide-icon">&#128203;</div>
+            <h1>Welcome to Clipboard History</h1>
+            <p class="subtitle">Never lose copied text again. Everything you copy is saved automatically and always
+                within reach.</p>
+        </div>
+
+        <!-- Slide 2: Features -->
+        <div class="slide slide-2">
+            <div class="slide-icon">&#10024;</div>
+            <h1>Powerful Features</h1>
+            <p class="subtitle">Everything you need to manage your clipboard like a pro.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">&#128203;</div>
+                    <h3>Auto-Capture</h3>
+                    <p>Every copy is saved instantly</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">&#128269;</div>
+                    <h3>Instant Search</h3>
+                    <p>Find any clip in seconds</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">&#11088;</div>
+                    <h3>Star & Pin</h3>
+                    <p>Keep favorites accessible</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">&#127991;&#65039;</div>
+                    <h3>Smart Detection</h3>
+                    <p>URLs, code, emails auto-tagged</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Shortcut & Get Started -->
+        <div class="slide slide-3">
+            <div class="slide-icon">&#9000;&#65039;</div>
+            <h1>Quick Access</h1>
+            <p class="subtitle">Open your clipboard history instantly from anywhere.</p>
+            <div class="keyboard-hint">
+                <span class="key-label">Press</span>
+                <span class="key">&#8984;</span>
+                <span class="key">Shift</span>
+                <span class="key">V</span>
+            </div>
+            <p class="subtitle" style="margin-top: 0; font-size: 14px;">Or click the extension icon in your toolbar</p>
+        </div>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="nav-dots" id="navDots">
+        <div class="dot active" data-slide="0"></div>
+        <div class="dot" data-slide="1"></div>
+        <div class="dot" data-slide="2"></div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="btn-container" id="btnContainer">
+        <button class="btn btn-secondary" id="skipBtn">Skip</button>
+        <button class="btn btn-primary" id="nextBtn">Next</button>
+    </div>
+
+    <!-- Privacy Note -->
+    <div class="privacy-note">
+        <span>100% Private</span>
+        <span>No data uploaded</span>
+        <span>Open Source</span>
+    </div>
+
+    <script src="welcome.js"></script>
+</body>
+
+</html>

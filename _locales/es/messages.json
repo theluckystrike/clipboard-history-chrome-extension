@@ -1,0 +1,196 @@
+{
+    "extensionName": {
+        "message": "Clipboard History",
+        "description": "The name of the extension shown in Chrome"
+    },
+    "extensionDescription": {
+        "message": "Nunca pierdas texto copiado. Busca, fija y pega desde tu historial completo del portapapeles.",
+        "description": "Extension description for Chrome Web Store"
+    },
+    "browserActionTitle": {
+        "message": "Clipboard History",
+        "description": "Tooltip shown when hovering over extension icon"
+    },
+    "tabAll": {
+        "message": "Todo",
+        "description": "Tab label for all clips"
+    },
+    "tabPinned": {
+        "message": "Fijados",
+        "description": "Tab label for pinned clips"
+    },
+    "tabStarred": {
+        "message": "Favoritos",
+        "description": "Tab label for starred clips"
+    },
+    "searchPlaceholder": {
+        "message": "Buscar clips...",
+        "description": "Placeholder text in search input"
+    },
+    "searchNoResults": {
+        "message": "No se encontraron clips",
+        "description": "Message when search returns no results"
+    },
+    "emptyStateTitle": {
+        "message": "Sin clips todavia",
+        "description": "Title when clipboard history is empty"
+    },
+    "emptyStateDescription": {
+        "message": "Copia algo de texto y aparecera aqui",
+        "description": "Description when clipboard history is empty"
+    },
+    "clipCopied": {
+        "message": "Copiado al portapapeles",
+        "description": "Toast message when clip is copied"
+    },
+    "clipPinned": {
+        "message": "Clip fijado",
+        "description": "Toast message when clip is pinned"
+    },
+    "clipUnpinned": {
+        "message": "Clip desfijado",
+        "description": "Toast message when clip is unpinned"
+    },
+    "clipStarred": {
+        "message": "Clip marcado como favorito",
+        "description": "Toast message when clip is starred"
+    },
+    "clipUnstarred": {
+        "message": "Clip desmarcado",
+        "description": "Toast message when clip is unstarred"
+    },
+    "clipDeleted": {
+        "message": "Clip eliminado",
+        "description": "Toast message when clip is deleted"
+    },
+    "buttonCopy": {
+        "message": "Copiar",
+        "description": "Copy button text"
+    },
+    "buttonPin": {
+        "message": "Fijar",
+        "description": "Pin button text"
+    },
+    "buttonUnpin": {
+        "message": "Desfijar",
+        "description": "Unpin button text"
+    },
+    "buttonStar": {
+        "message": "Favorito",
+        "description": "Star button text"
+    },
+    "buttonUnstar": {
+        "message": "Quitar favorito",
+        "description": "Unstar button text"
+    },
+    "buttonDelete": {
+        "message": "Eliminar",
+        "description": "Delete button text"
+    },
+    "buttonClearAll": {
+        "message": "Borrar todo",
+        "description": "Clear all clips button"
+    },
+    "buttonSettings": {
+        "message": "Ajustes",
+        "description": "Settings button text"
+    },
+    "settingsTitle": {
+        "message": "Ajustes",
+        "description": "Settings page title"
+    },
+    "settingsTheme": {
+        "message": "Tema",
+        "description": "Theme setting label"
+    },
+    "settingsThemeLight": {
+        "message": "Claro",
+        "description": "Light theme option"
+    },
+    "settingsThemeDark": {
+        "message": "Oscuro",
+        "description": "Dark theme option"
+    },
+    "settingsThemeSystem": {
+        "message": "Sistema",
+        "description": "System theme option"
+    },
+    "clipTypeText": {
+        "message": "Texto",
+        "description": "Text clip type label"
+    },
+    "clipTypeUrl": {
+        "message": "URL",
+        "description": "URL clip type label"
+    },
+    "clipTypeCode": {
+        "message": "Codigo",
+        "description": "Code clip type label"
+    },
+    "clipTypeEmail": {
+        "message": "Correo",
+        "description": "Email clip type label"
+    },
+    "timeJustNow": {
+        "message": "Ahora mismo",
+        "description": "Timestamp for very recent clips"
+    },
+    "timeMinutesAgo": {
+        "message": "Hace $COUNT$ minutos",
+        "description": "Timestamp for minutes ago",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "5"
+            }
+        }
+    },
+    "timeHoursAgo": {
+        "message": "Hace $COUNT$ horas",
+        "description": "Timestamp for hours ago",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
+    },
+    "timeDaysAgo": {
+        "message": "Hace $COUNT$ dias",
+        "description": "Timestamp for days ago",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "3"
+            }
+        }
+    },
+    "confirmClearAll": {
+        "message": "Estas seguro de que quieres borrar todos los clips? Esto no se puede deshacer.",
+        "description": "Confirmation message for clearing all clips"
+    },
+    "buttonConfirm": {
+        "message": "Confirmar",
+        "description": "Confirm button text"
+    },
+    "buttonCancel": {
+        "message": "Cancelar",
+        "description": "Cancel button text"
+    },
+    "errorGeneric": {
+        "message": "Algo salio mal. Por favor, intentalo de nuevo.",
+        "description": "Generic error message"
+    },
+    "welcomeTitle": {
+        "message": "Bienvenido a Clipboard History!",
+        "description": "Welcome screen title"
+    },
+    "welcomeDescription": {
+        "message": "Tu historial del portapapeles se esta guardando automaticamente.",
+        "description": "Welcome screen description"
+    },
+    "welcomeGetStarted": {
+        "message": "Comenzar",
+        "description": "Get started button on welcome screen"
+    }
+}

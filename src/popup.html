@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=380">
+    <title>Clipboard History</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div class="popup">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-brand">
+                <img src="../icons/icon-32.png" alt="Logo" class="header-logo">
+                <span class="header-title">Clipboard History</span>
+            </div>
+            <div class="header-actions">
+                <button class="btn-icon" id="settingsBtn" title="Settings">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 10a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="1.5" />
+                        <path
+                            d="M13.5 8c0-.5-.4-1-.9-1h-.3c-.1-.4-.3-.8-.5-1.1l.2-.2c.4-.4.4-1 0-1.4l-.3-.3c-.4-.4-1-.4-1.4 0l-.2.2c-.3-.2-.7-.4-1.1-.5v-.3c0-.5-.5-.9-1-.9s-1 .4-1 .9v.3c-.4.1-.8.3-1.1.5l-.2-.2c-.4-.4-1-.4-1.4 0l-.3.3c-.4.4-.4 1 0 1.4l.2.2c-.2.3-.4.7-.5 1.1h-.3c-.5 0-.9.5-.9 1s.4 1 .9 1h.3c.1.4.3.8.5 1.1l-.2.2c-.4.4-.4 1 0 1.4l.3.3c.4.4 1 .4 1.4 0l.2-.2c.3.2.7.4 1.1.5v.3c0 .5.5.9 1 .9s1-.4 1-.9v-.3c.4-.1.8-.3 1.1-.5l.2.2c.4.4 1 .4 1.4 0l.3-.3c.4-.4.4-1 0-1.4l-.2-.2c.2-.3.4-.7.5-1.1h.3c.5 0 .9-.5.9-1z"
+                            stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Search & Filter Bar -->
+        <div class="search-bar">
+            <div class="search-input-wrapper">
+                <svg class="search-icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M9.5 9.5L13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+                <input type="text" class="search-input" id="searchInput" placeholder="Search clips...">
+                <span class="clip-count" id="clipCount">0</span>
+            </div>
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">All</button>
+                <button class="filter-tab" data-filter="starred">&#9733;</button>
+                <button class="filter-tab" data-filter="pinned">&#128204;</button>
+                <button class="filter-tab" data-filter="text">Text</button>
+                <button class="filter-tab" data-filter="url">URL</button>
+                <button class="filter-tab" data-filter="code">Code</button>
+            </div>
+        </div>
+
+        <!-- Clips List -->
+        <div class="clips-container" id="clipsContainer">
+            <div class="clips-list" id="clipsList">
+                <!-- Clips render here -->
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState" hidden>
+                <div class="empty-state-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect x="6" y="2" width="20" height="28" rx="3" stroke="currentColor" stroke-width="2" />
+                        <rect x="10" y="0" width="12" height="4" rx="2" fill="currentColor" />
+                        <path d="M11 12h10M11 17h10M11 22h6" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" />
+                    </svg>
+                </div>
+                <h3 class="empty-state-title">Your clipboard history is empty</h3>
+                <p class="empty-state-description">
+                    Copy any text and it will appear here.
+                    Press <kbd class="keyboard-hint">&#8984;&#8679;V</kbd> anytime to open.
+                </p>
+            </div>
+
+            <!-- No Results State -->
+            <div class="empty-state" id="noResultsState" hidden>
+                <div class="empty-state-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="2" />
+                        <path d="M22 22l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M11 11l6 6M17 11l-6 6" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" />
+                    </svg>
+                </div>
+                <h3 class="empty-state-title">No clips match your search</h3>
+                <p class="empty-state-description" id="noResultsText">
+                    Try a different search term or clear filters.
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <a href="https://zovo.one" target="_blank" class="footer-brand">
+                <span class="zovo-logo">z</span>
+                <span>zovo.</span>
+            </a>
+            <div class="footer-actions">
+                <button class="btn-icon btn-export" id="exportBtn" title="Export">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M7 1v8M3 5l4-4 4 4M2 10v2h10v-2" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <button class="btn-icon btn-clear" id="clearBtn" title="Clear All">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M2 4h10M5 4V2h4v2M3 4v8a1 1 0 001 1h6a1 1 0 001-1V4" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </footer>
+
+        <!-- Settings Panel -->
+        <div class="settings-panel" id="settingsPanel" hidden>
+            <div class="settings-header">
+                <h3>Settings</h3>
+                <button class="btn-icon" id="closeSettings">&times;</button>
+            </div>
+            <div class="settings-content">
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="notificationsEnabled" checked>
+                        Show notifications
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="autoDeleteDuplicates" checked>
+                        Auto-remove duplicates
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>Theme</label>
+                    <select id="themeSelect">
+                        <option value="dark">Dark</option>
+                        <option value="light">Light</option>
+                        <option value="system">System</option>
+                    </select>
+                </div>
+                <hr>
+                <div class="settings-footer">
+                    <button class="btn-secondary" id="exportAllBtn">Export All</button>
+                    <button class="btn-danger" id="clearAllBtn">Clear All</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
